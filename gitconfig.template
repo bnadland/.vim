@@ -1,0 +1,11 @@
+[user]
+    name = bnadland
+    email = benjamin.nadland@freenet.de
+[alias]
+    st = status -sb
+    co = checkout
+    cm = !git add -p && git commit
+		l  = log --pretty=format:\"%h %ai %s\" --graph
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
