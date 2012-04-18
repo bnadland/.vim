@@ -1,0 +1,73 @@
+"" general configurations
+set encoding=utf-8
+
+" show incomplete commands
+set showcmd
+
+" show line,column,percentage in the lower right
+set ruler
+
+" activate filtype plugin
+filetype plugin on
+
+" search parent directories for tags file
+set tags=tags;
+
+" ignore case in searches
+"set ignorecase
+set smartcase
+
+" syntax highlighting
+syntax on
+
+" set colors
+colorscheme own
+
+" make F1 behave as ESC
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" line number toggle
+"map <F2> :set nonumber!<CR>:set foldcolumn=0<CR>:syntax off<CR>:syntax on<CR>
+
+" interactive git commit
+map <F2> :!git cm<CR>
+
+" go to next buffer
+map <F3> :next<CR>
+
+"" taglist plugin (to use on OpenBSD: pkg_add vim-taglist ectags)
+" our ctags command is ectags (exuberant ctags)
+let Tlist_Ctags_Cmd="ectags"
+" use F4 to toggle tags buffer
+map <F4> :TlistToggle<CR>
+vmap <F4> <ESC>:TlistToggle<CR>
+imap <F4> <ESC>:TlistToggle<CR>
+" Remove extra information and blank lines from the taglist window
+let Tlist_Compart_Format = 1
+" Jump to taglist window on open
+let Tlist_GainFocus_On_ToggleOpen = 1
+" Show tag scope next to the tag name
+let Tlist_Display_Tag_Scope = 1
+" Don't Show the fold indicator column in the taglist window
+let Tlist_Enable_Fold_Column = 0
+
+" perltidy
+map <F5> :%!perltidy<CR>
+" run perl with current file
+map <F6> :!perl %<CR>
+" run perl with current file and argument foo
+map <F7> :!perl % foo<CR>
+" run perl tests
+map <F8> :!prove -Ilib<CR>
+" save with superuser permissions
+map <F9> :w !sudo tee %<CR>
+
+" backspace
+set backspace=indent,eol,start
+
+" set tab options
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
